@@ -22,4 +22,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: chmod +x ./node_modules/.bin/mocha  # Ajouter cette ligne
     - run: npx mocha
