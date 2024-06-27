@@ -1,15 +1,20 @@
 name: Node.js CI
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [14, 16, 18]
+
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -17,5 +22,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: chmod +x node_modules/.bin/mocha  # Ajoutez cette ligne pour donner les permissions nécessaires
-    - run: npm test
+    - run: npx mocha

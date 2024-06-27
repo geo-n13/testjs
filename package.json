@@ -4,7 +4,7 @@
   "description": "Tests JS - Atelier tests automatisés",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "npx mocha"
   },
   "keywords": ["Geo MERCORE"],
   "author": "",
